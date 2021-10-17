@@ -1,4 +1,4 @@
-from cards import FULL_DECK, Cards
+from cards import FULL_DECK, Card
 from copy import deepcopy
 import random
 from collections import deque
@@ -9,9 +9,10 @@ c = deque(deepcopy(FULL_DECK))
 random.shuffle(c)
 
 
-playing_board: List[List[Cards]] = []
+playing_board: List[List[Card]] = []
 
 for a in range(7):
-    playing_board.append([c.pop() for _ in range(a+1)])
+    stack = [c.pop() for _ in range(a+1)]
+    playing_board.append([stack[0]._replace(flipped=True)] + stack[1:])
 
     # print(playing_board)
