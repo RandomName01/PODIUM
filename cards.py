@@ -9,5 +9,5 @@ deck = [Card(color=col, number=num, flipped=False)
 
 jokers = [Card(color="joker", number=14, flipped=False) for _ in range(2)]
 
-# TADA! Le jeu de cartes complet est déjà créé en à peine quelques lignes.
+# TADA! Le jeu de cartes complet est déjà créé en à peine quelques lignes. et oui!
 FULL_DECK = deck + jokers
